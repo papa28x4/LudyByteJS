@@ -1,11 +1,4 @@
-// document.getElementById("login-signup-button").addEventListener("click", e => 
-// {
-// 	e.preventDefault();
-// 	document.getElementById("login").style.left = "0";
-// 	document.getElementById("signup").style.left = "100vw";
-// 	document.getElementById("login").className = "left-shift";
-// 	document.getElementById("signup").className = "left-shift";
-// });
+
 document.getElementById("signup-login-button").addEventListener("click", e => 
 {
 	e.preventDefault();
@@ -69,16 +62,14 @@ const addUserInfo =()=>{
 	validUsers[userCount].name = signUpName.value;
 	validUsers[userCount].email = signUpEmail.value;
 	validUsers[userCount].password = signUpPwd.value;
-	console.log(validUsers)
+	
 	userCount++;
 	localStorage.setItem('userData', JSON.stringify(validUsers))
 	localStorage.setItem('count', userCount)
 	if (confirm("Welcome On Board! Click OK to proceed to site")) {
 		dashboard(signUpName.value);
 	  } 
-	
-	
-	console.log(validUsers)	
+		
 }
 
 const userFeedback =(num)=>{
@@ -109,28 +100,23 @@ const userFeedback =(num)=>{
 signUpButton.addEventListener('click', (e)=>{
 	e.preventDefault()
 	let notExisting = true;
-	console.log('it returned')
-	// console.log(loginPwd.value.length)
-	// console.log(!signUpEmail.value, !loginPwd.value )
-	console.log(nameOk, emailOk, pwdOk)
+
 	if (!nameOk || !emailOk || !pwdOk) return
-	// if(!signUpEmail.value) return
-	console.log("it didn't returned")
+	
 	if(validUsers.length !== 0){
 		validUsers.forEach((validUser)=>{
 			if (validUser.email.toLowerCase() === signUpEmail.value.toLowerCase()) {
-				console.log('Email address already exists')
 				notExisting = false;
 				userFeedback(4)
 			 }
 		 })
 		 if(notExisting){
 			addUserInfo()
-				console.log(validUsers)
+				
 		 }			
 	}else{
 		addUserInfo()
-		console.log(validUsers)
+		
 	}
 })
 
@@ -141,16 +127,16 @@ loginButton.addEventListener('click', (e)=>{
 		if (validUser.email.toLowerCase() === loginEmail.value.toLowerCase()){
 			userNotFound = false;
 			if(validUser.password === loginPwd.value){
-				console.log("You've Successfully logged in")
+				
 				dashboard(validUser.name)
 			}else{
-				console.log("Invalid Password")
+				
 				userFeedback(2)
 			}
 		}
 	})
 	if(userNotFound){
-		console.log('User not found')
+		
 		userFeedback(3)
 	}
 })
@@ -167,13 +153,13 @@ const validity = (regx, event) =>{
 		event.target.previousElementSibling.children[0].classList.add('invalid');
 		event.target.previousElementSibling.children[0].style.display = "block";
 	}
-	console.log(valid)
+	
 	return valid
 }
 
 name.addEventListener('blur', e =>{
 	nameOk = validity(validName, e)
-	console.log(nameOk)
+	
 	if(!nameOk){userFeedback(5)}
 })
 
@@ -184,7 +170,7 @@ emails.forEach((email)=>{
 })
 
 signUpPwd.addEventListener('blur', e=>{
-	console.log(e)
+	
 	pwdOk = validity(pwdComplexity, e)
 	if(!pwdOk){userFeedback(1);}
 })

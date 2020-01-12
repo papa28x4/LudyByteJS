@@ -1,5 +1,9 @@
 
-body
+
+*{
+    box-sizing: border-box;
+}
+body, html
 {
     scroll-behavior: smooth;
     font-family: "Raleway", 'Segoe UI', sans-serif;
@@ -44,12 +48,12 @@ hr
 }
 
 input[type="email"]{
-    background: url('../images/inputs.png') 275px 10px no-repeat;
+    background: url('../images/inputs.png') 265px 10px no-repeat;
     background-color: #f4f4f4;
 }
 
-input[type="text"] {
-    background: url('../images/user.png') 275px 10px no-repeat;
+#signup-name {
+    background: url('../images/user.png') 270px 10px no-repeat;
     background-color: #f4f4f4;
     background-blend-mode: multiply;
 }
@@ -61,7 +65,7 @@ input[type="text"] {
     background-color: #f4f4f4;
     position: absolute;
     top: 38px;
-    left: 281px;
+    left: 270px;
     background-size: 100%;
     display: inline-block;
     width: 20px;
@@ -355,3 +359,80 @@ ul {
 }
 
 /* Media queries */
+@media (max-width: 992px){
+
+/*****************Login in **********************/
+    #login{
+        display: flex!important;
+        flex-direction: column!important;
+        justify-content: flex-start!important!;
+        height: 210vh;
+    }
+    
+    #login > section{
+        width: 100%;
+       
+    }
+    #login-left{
+        padding: 0;
+        background-position: center;
+    }
+    #login-right{
+        flex: 1;
+    }
+    #login-right > h1{
+        margin-top: 20px;
+    }
+    #login-right > form{
+        margin-top: 40px;
+    }
+    .input{
+
+    }
+    form > *{
+        margin: 20px calc(50% - 157px);
+    }
+    form br{
+        display: none;
+    }
+    #login-login-button{
+         margin: 20px calc(50% - 74px);
+    }
+
+    /*****************Sign Up **********************/
+    #signup{
+        display: flex!important;
+        flex-direction: column!important;
+        justify-content: flex-start!important;
+    }
+    #signup-left{
+        width: 100VW;
+        padding-top: 0;
+    }
+    #signup-right{
+        width: 100VW;
+    }
+    #signup-intro{
+        margin-bottom: 40px;
+    }
+    #signup-signup-button{
+        margin: 20px calc(50% - 95px);
+        text-align: center;
+    }
+    /*****************************************************/
+    input[type="email"]{
+        background: url('../images/inputs.png') 260px 10px no-repeat;
+        background-color: #f4f4f4;
+    }
+    #showHide {
+        background: url(../images/showpwd.PNG) no-repeat;
+        background-color: #f4f4f4;
+        left: 265px;
+        background-size: 100%;
+    }
+    #signup-name {
+        background: url('../images/user.png') 260px 10px no-repeat;
+        background-color: #f4f4f4;
+        background-blend-mode: multiply;
+    }
+}
