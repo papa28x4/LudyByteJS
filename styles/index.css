@@ -362,13 +362,19 @@ ul {
 @media (max-width: 992px){
 
 /*****************Login in **********************/
+    body,html{
+        height: 150vh;
+    }
+    
+    }
     #login{
         display: flex!important;
         flex-direction: column!important;
         justify-content: flex-start!important!;
-        height: 210vh;
+        height: 150vh;
     }
-    
+
+
     #login > section{
         width: 100%;
        
@@ -376,6 +382,17 @@ ul {
     #login-left{
         padding: 0;
         background-position: center;
+    }
+
+    #login-left h1{
+        margin-top: 27px;
+    }
+   
+    #login-left p:nth-of-type(1){
+        margin-bottom: 0;
+    }
+     #login-left p:nth-of-type(2){
+        margin-top: 0;
     }
     #login-right{
         flex: 1;
@@ -435,4 +452,78 @@ ul {
         background-color: #f4f4f4;
         background-blend-mode: multiply;
     }
+}
+
+@media (max-width: 480px){
+     #login-left p:nth-of-type(1){
+        margin-bottom: 15px;
+        text-align: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 0.9rem;
+    }
+      #login-left br{
+        display: none;
+    }
+
+    #login-right h1{
+        font-size: 30px;
+    }
+    #login-right form{
+        margin-top: 28px;
+    }
+    #signup-left h1, 
+     #signup-right h1{
+        margin-top: 27px;
+        font-size: 35px;
+    }
+
+    #signup-intro{
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+    #signup-right>p:nth-of-type(1){
+        font-size: 0.9rem;
+    }
+     #signup-right form{
+        margin-top: 25px;
+    }
+    .error-message{
+        border: 1px solid blue;
+        word-break: break-word;
+        width:90%;
+        font-size: 0.7em;
+        padding-left: 10px;
+    }
+    .tick{
+        left:305px;
+    }
+}
+
+@media (max-width: 350px){
+     #login-left p:nth-of-type(1){
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+      #login-left p:nth-of-type(1){
+        margin-bottom: 20px;
+    }
+
+    #login-right form{
+        padding-left: 12px;
+    }
+
+    #signup-left h1{
+        font-size: 30px;
+    }
+     #signup-right h1{
+        font-size: 30px;
+     }
+     #signup-right br{
+        display: none;
+    }
+    input{
+        width: 250px;
+    }
+
 }
